@@ -2,7 +2,7 @@
 {
     using System;
 
-    public class CustomerMessage
+    public class CustomerMessage : IMessage
     {
         public string Name { get; set; }
         public string Email { get; set; }
@@ -33,5 +33,20 @@
         {
             throw new NotSupportedException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
-    }
+
+		public IMessage proccessMessage()
+		{
+			throw new NotImplementedException();
+		}
+
+		public string getContent()
+		{
+            return this.GetContent();
+		}
+
+		public void setContent(string content)
+		{
+            this.SetContent(content);
+		}
+	}
 }

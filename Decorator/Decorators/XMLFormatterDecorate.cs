@@ -5,7 +5,7 @@
     using System.Xml.Serialization;
     using Decorator.Messages;
 
-    public class XMLFormatterDecorate
+    public class XMLFormatterDecorate : MessageDecorator
     {
         private CustomerMessage message;
         public XMLFormatterDecorate(CustomerMessage message)

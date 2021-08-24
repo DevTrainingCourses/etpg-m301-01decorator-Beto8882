@@ -2,7 +2,7 @@
 {
     using Decorator.Messages;
 
-    public class SOAPEnvelopMessage
+    public class SOAPEnvelopMessage : MessageDecorator
     {
         TextMessage message;
         public SOAPEnvelopMessage(TextMessage message)

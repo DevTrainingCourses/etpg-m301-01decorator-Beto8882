@@ -1,6 +1,6 @@
 ﻿namespace Decorator.Messages
 {
-    public class TextMessage
+    public class TextMessage : IMessage
     {
         private string Content;
 
@@ -32,5 +32,20 @@
         {
             this.Content = content;
         }
-    }
+
+		public IMessage proccessMessage()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public string getContent()
+		{
+			throw new System.NotImplementedException();
+		}
+
+		public void setContent(string content)
+		{
+			throw new System.NotImplementedException();
+		}
+	}
 }

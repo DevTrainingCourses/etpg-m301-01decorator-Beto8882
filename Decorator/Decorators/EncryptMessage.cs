@@ -5,7 +5,7 @@
     using System.Text;
     using Decorator.Messages;
 
-    public class EncryptMessage
+    public class EncryptMessage : MessageDecorator
     {
         public string User { get; set; }
         public string Password { get; set; }
