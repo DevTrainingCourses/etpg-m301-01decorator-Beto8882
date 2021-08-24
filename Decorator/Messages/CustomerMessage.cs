@@ -4,9 +4,9 @@
 
     public class CustomerMessage : IMessage
     {
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string Telephone { get; set; }
+        private string Name { get; set; }
+        private string Email { get; set; }
+        private string Telephone { get; set; }
 
         public CustomerMessage()
         {

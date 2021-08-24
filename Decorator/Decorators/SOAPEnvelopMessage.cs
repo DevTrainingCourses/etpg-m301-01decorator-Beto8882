@@ -4,11 +4,19 @@
 
     public class SOAPEnvelopMessage : MessageDecorator
     {
-        TextMessage message;
-        public SOAPEnvelopMessage(TextMessage message)
+        public SOAPEnvelopMessage(IMessage message) : base(message)
         {
             this.message = message;
         }
+
+        //TextMessage message;
+        //public SOAPEnvelopMessage(TextMessage message)
+        //{
+        //    this.message = message;
+        //}
+
+
+
 
         public TextMessage EnvelopMessage()
         {
@@ -17,12 +25,12 @@
                     + "\nxmlns:ser=\"http://service.dishweb.cl.com/\">\n"
                     + "   <soapenv:Header/>\n"
                     + "   <soapenv:Body>\n"
-                    + message.GetContent()
+                    + message.getContent()
                     + "\n"
                     + "   </soapenv:Body>\n"
                     + "</soapenv:Envelope>";
-            message.SetContent(soap);
-            return message;
+            message.setContent(soap);
+            return (TextMessage)message;
         }
 
     }

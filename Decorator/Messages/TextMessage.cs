@@ -40,12 +40,12 @@
 
 		public string getContent()
 		{
-			throw new System.NotImplementedException();
+            return this.GetContent();
 		}
 
 		public void setContent(string content)
 		{
-			throw new System.NotImplementedException();
+            this.Content = content;
 		}
 	}
 }

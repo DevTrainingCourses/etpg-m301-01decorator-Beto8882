@@ -7,11 +7,16 @@
 
     public class XMLFormatterDecorate : MessageDecorator
     {
-        private CustomerMessage message;
-        public XMLFormatterDecorate(CustomerMessage message)
+        public XMLFormatterDecorate(IMessage message) : base(message)
         {
             this.message = message;
         }
+
+        //private CustomerMessage message;
+        //public XMLFormatterDecorate(IMessage message)
+        //{
+        //    this.message = message;
+        //}
 
         public TextMessage XmlMessage()
         {

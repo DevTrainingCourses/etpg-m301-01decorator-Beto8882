@@ -8,17 +8,30 @@
     {
         static void Main(string[] args)
         {
-            CustomerMessage customerMessage = new CustomerMessage("Jose Ecos", "jose.ecos@gmail.com", "55512345");
+            IMessage customerMessage = new CustomerMessage("Jose Ecos", "jose.ecos@gmail.com", "55512345");
             Console.WriteLine("Original Message ==> " + customerMessage);
-                        
-            TextMessage xmlMessage = new XMLFormatterDecorate(customerMessage).XmlMessage();
-            Console.WriteLine("SOAP Encrypt Message ==>\n{0}", xmlMessage.GetContent() + "\n\n");
 
-            TextMessage soapXmlMessage = new SOAPEnvelopMessage(xmlMessage).EnvelopMessage();
+            IMessage xmlMessage = new XMLFormatterDecorate(customerMessage).XmlMessage();
+            Console.WriteLine("SOAP Encrypt Message ==>\n{0}", xmlMessage.getContent() + "\n\n");
+
+            IMessage soapXmlMessage = new SOAPEnvelopMessage(xmlMessage).EnvelopMessage();
             Console.WriteLine("SOAP Encrypt Message ==> " + soapXmlMessage);
 
-            TextMessage encryptsoapXmlMessage = new EncryptMessage("user", "HG58YZ3CR9123456", soapXmlMessage).Encript();
+            IMessage encryptsoapXmlMessage = new EncryptMessage("user", "HG58YZ3CR9123456", soapXmlMessage).Encript();
             Console.WriteLine("Encrypt Message ==> " + encryptsoapXmlMessage);
+
+
+            //CustomerMessage customerMessage = new CustomerMessage("Jose Ecos", "jose.ecos@gmail.com", "55512345");
+            //Console.WriteLine("Original Message ==> " + customerMessage);
+
+            //TextMessage xmlMessage = new XMLFormatterDecorate(customerMessage).XmlMessage();
+            //Console.WriteLine("SOAP Encrypt Message ==>\n{0}", xmlMessage.GetContent() + "\n\n");
+
+            //TextMessage soapXmlMessage = new SOAPEnvelopMessage(xmlMessage).EnvelopMessage();
+            //Console.WriteLine("SOAP Encrypt Message ==> " + soapXmlMessage);
+
+            //TextMessage encryptsoapXmlMessage = new EncryptMessage("user", "HG58YZ3CR9123456", soapXmlMessage).Encript();
+            //Console.WriteLine("Encrypt Message ==> " + encryptsoapXmlMessage);
         }
     }
 }

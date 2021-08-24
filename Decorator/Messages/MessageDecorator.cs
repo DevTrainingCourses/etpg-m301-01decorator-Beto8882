@@ -4,13 +4,19 @@ using System.Text;
 
 namespace Decorator.Messages
 {
-	public class MessageDecorator : IMessage
+	public abstract class MessageDecorator : IMessage
 	{
 
 		protected IMessage message;
+
+		public MessageDecorator(IMessage message)
+		{
+			this.message = message;
+		}
+
 		public string getContent()
 		{
-			throw new NotImplementedException();
+			return this.message.ToString();
 		}
 
 		public IMessage proccessMessage()
